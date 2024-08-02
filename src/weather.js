@@ -74,7 +74,7 @@ export default function Weather(props) {
           <a
             href="https://github.com/GhazalKa/ShecodesReactProject"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             open-sourced on GitHub
           </a>{" "}
@@ -82,7 +82,7 @@ export default function Weather(props) {
           <a
             href="https://shecodes-react-project.vercel.app/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             hosted on Vercel
           </a>
