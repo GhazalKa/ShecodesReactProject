@@ -67,14 +67,14 @@ export default function Weather(props) {
         />
         <footer>
           This project was coded by{" "}
-          <a href="" target="_blank" rel="noopener noreferrer">
-            Ghazal Kamari
+          <a href="/" target="_blank" rel="noopener noreferrer">
+            GhazalKamari
           </a>{" "}
           and is{" "}
           <a
             href="https://github.com/GhazalKa/ShecodesReactProject"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             open-sourced on GitHub
           </a>{" "}
@@ -82,7 +82,7 @@ export default function Weather(props) {
           <a
             href="https://shecodes-react-project.vercel.app/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             hosted on Vercel
           </a>
