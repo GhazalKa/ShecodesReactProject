@@ -1,4 +1,5 @@
 import React from "react";
+// this is a ready package : https://www.npmjs.com/package/react-animated-weather
 import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon(props) {
