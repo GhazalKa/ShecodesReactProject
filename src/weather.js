@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+// installing axios to use api
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-
+  // function to api responses
   function handleResponse(response) {
     setWeatherData({
       ready: true,
       coordinates: response.data.coordinates,
       temperature: response.data.temperature.current,
       humidity: response.data.temperature.humidity,
+      //
       date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       icon: response.data.condition.icon,
@@ -30,9 +32,10 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
-
+  // using api
   function search() {
     const apiKey = "eac360db5fc86ft86450f3693e73o43f";
+    // unit= metrics is for showing celsius or fahrenheit
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
@@ -44,6 +47,7 @@ export default function Weather(props) {
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9 ">
+              {/* the search input */}
               <input
                 type="search"
                 placeholder="Enter a city.."
@@ -51,6 +55,7 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
+            {/* the search button */}
             <div className="col-3 p-0">
               <input
                 type="submit"
@@ -60,11 +65,14 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
+        {/* name of the city and the image */}
         <WeatherInfo data={weatherData} />
+        {/* forecasting and details of each day temp */}
         <WeatherForecast
           coordinates={weatherData.coordinates}
           city={weatherData.city}
         />
+        {/* footer */}
         <footer>
           This project was coded by{" "}
           <a href="/" target="_blank" rel="noopener noreferrer">
